@@ -30,11 +30,16 @@ class NoWeather extends StatelessWidget {
                 );
               },
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(
+                backgroundColor: WidgetStateProperty.all<Color>(
                   Colors.grey.shade800,
                 ),
               ),
-              child: const Text('search weather'),
+              child: const Text(
+                'search weather',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
             ),
           ],
         ),

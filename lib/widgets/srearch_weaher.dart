@@ -51,12 +51,15 @@ class SearchWeather extends StatelessWidget {
                       Navigator.pop(context);
                     },
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(
+                      backgroundColor: WidgetStateProperty.all<Color>(
                         Colors.grey.shade800,
                       ),
                     ),
                     child: const Text(
                       'show weather',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),

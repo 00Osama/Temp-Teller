@@ -8,7 +8,7 @@ import 'package:weatherapp/widgets/my_weather.dart';
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
-      statusBarColor: Colors.grey[400],
+      statusBarColor: Colors.grey[500],
     ),
   );
   runApp(const MyApp());

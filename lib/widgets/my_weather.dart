@@ -4,6 +4,7 @@ import 'package:weatherapp/cubits/get_weather_cubit.dart';
 import 'package:weatherapp/widgets/loading.dart';
 import 'package:weatherapp/widgets/no_weather.dart';
 import 'package:weatherapp/widgets/show_weather.dart';
+import 'package:weatherapp/widgets/srearch_weaher.dart';
 
 class MyWeather extends StatefulWidget {
   const MyWeather({super.key});
@@ -26,8 +27,46 @@ class _MyWeatherState extends State<MyWeather> {
         } else if (state is DataLoadingState) {
           return const Loading();
         } else {
-          return const Center(
-            child: Text('Unknowen cubit Error'),
+          return Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset('assets/page-lost.png'),
+                const Text(
+                  'Unknowen city name',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                const SizedBox(
+                  height: 70,
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return const SearchWeather();
+                        },
+                      ),
+                    );
+                  },
+                  style: ButtonStyle(
+                    backgroundColor: WidgetStateProperty.all<Color>(
+                      Colors.grey.shade800,
+                    ),
+                  ),
+                  child: const Text(
+                    'search weather',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           );
         }
       },
